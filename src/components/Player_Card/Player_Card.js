@@ -2,7 +2,7 @@ import React from 'react';
 import './playerCard.css';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../Cart/CartSlice';
-import { filterPlayerCard } from '../SearchResults/searchResultsSlice';
+import { filterPlayersInCart } from '../SearchResults/searchResultsSlice';
 
 export const PlayerCard = (props) => {
     const dispatch = useDispatch();
@@ -10,6 +10,7 @@ export const PlayerCard = (props) => {
     const addPlayerToCart = (e) => {
         e.preventDefault();
         dispatch(addToCart(props.player));
+        dispatch(filterPlayersInCart(props.player));
     }
     
     return (

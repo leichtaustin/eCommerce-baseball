@@ -25,6 +25,7 @@ export const playerFactory = () => {
         position: positionArray[Math.floor(Math.random() * positionArray.length)],
         hits: hits,
         fantasyPoints: Math.floor(hits * 2.25),
+        isInCart: false,
     }
     
 }

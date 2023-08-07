@@ -8,6 +8,9 @@ export const searchResultSlice = createSlice({
         addPlayerCards: (state, action) => {
             return [...state, action.payload]
         },
+        filterPlayersInCart: (state, action) => {
+            return state.filter(player => player.playerId !== action.payload.playerId)
+        }
     }
 })
 
@@ -26,5 +29,5 @@ export const selectSearchResults = (state) => state.searchResults;
 
 //export actions and reducer
 
-export const { addPlayerCards } = searchResultSlice.actions;
+export const { addPlayerCards, filterPlayersInCart } = searchResultSlice.actions;
 export default searchResultSlice.reducer;

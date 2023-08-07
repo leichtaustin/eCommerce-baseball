@@ -12,6 +12,7 @@ export const SearchResults = () => {
     return (
         <div className='searchResultsContainer'>
             {displayedResults.map((player) =>{
+                if(!(player.isInCart)) {
                 return (
                     <div>
                         <PlayerCard 
@@ -20,6 +21,7 @@ export const SearchResults = () => {
                     </div>
 
                 );
+            }
             })}
         </div>
     )
