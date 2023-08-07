@@ -1,0 +1,9 @@
+.searchResultsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 75%;
+    margin: auto;
+    border: solid 1px black;
+    justify-content: space-around;
+    min-height: 2rem;
+}

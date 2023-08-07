@@ -1,8 +1,9 @@
 import React from 'react';
+import './searchResults.css';
 import { playerFactory } from '../../utility/dataFactory';
 import { PlayerCard } from '../Player_Card/Player_Card';
 import { useSelector } from 'react-redux';
-import { selectSearchResults } from './searchResultsSlice';
+import { selectFilteredPlayers, selectSearchResults } from './searchResultsSlice';
 
 export const SearchResults = () => {
 
@@ -14,12 +15,7 @@ export const SearchResults = () => {
                 return (
                     <div>
                         <PlayerCard 
-                            firstName={player.firstName}
-                            lastName={player.lastName}
-                            auctionValue={player.auctionValue}
-                            position={player.position}
-                            hits={player.hits}
-                            fantasyPoints={player.fantasyPoints}                        
+                            player = {player}                        
                         />
                     </div>
 

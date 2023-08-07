@@ -1,14 +1,26 @@
 import React from 'react';
+import './playerCard.css';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../Cart/CartSlice';
+import { filterPlayerCard } from '../SearchResults/searchResultsSlice';
 
 export const PlayerCard = (props) => {
+    const dispatch = useDispatch();
+
+    const addPlayerToCart = (e) => {
+        e.preventDefault();
+        dispatch(addToCart(props.player));
+    }
+    
     return (
         <div className='playerCardContainer'>
-            <h2>Name: {props.firstName} {props.lastName}</h2>
-            <p>Position: {props.position}</p>
-            <p>Auction Value: {props.auctionValue}</p>
-            <p>Hits: {props.hits}</p>
-            <p>FantasyPoints: {props.fantasyPoints}</p>
-            <button type='button'>
+            <h2>Name: {props.player.firstName} {props.player.lastName}</h2>
+            <p>Position: {props.player.position}</p>
+            <p>Auction Value: {props.player.auctionValue}</p>
+            <p>Hits: {props.player.hits}</p>
+            <p>FantasyPoints: {props.player.fantasyPoints}</p>
+            <p>ID: {props.player.playerId}</p>
+            <button type='button' onClick={addPlayerToCart}>
                 Add To Cart
             </button>
         </div>
