@@ -1,18 +1,18 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { selectCart } from "./CartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { removeFromCart, selectCartTotal, selectPlayersInCart } from "./CartSlice";
+import { CartPlayerCard } from "./CartPlayerCard";
 
 export const Cart = () => {
-    const cartContents = useSelector(selectCart);
+    const cartContents = useSelector(selectPlayersInCart);
+    const cartTotal = useSelector(selectCartTotal);
 
     return (
         <div className="cartContainer">
+            <p>Total: {cartTotal}</p>
             {cartContents.map((player) => {
                 return (
-                    <div className="cartPlayerCard">
-                        <h3>{player.firstName} {player.lastName}</h3>
-                        <p>${player.auctionValue}</p>
-                    </div>
+                    <CartPlayerCard player = {player} />
                 )
             })}
         </div>

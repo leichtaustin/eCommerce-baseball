@@ -6,7 +6,10 @@ export const searchResultSlice = createSlice({
     initialState: [],
     reducers: {
         addPlayerCards: (state, action) => {
-            return [...state, action.payload]
+            return [...state, {
+                ...action.payload,
+                isInCart: false
+            }]
         },
         filterPlayersInCart: (state, action) => {
             return state.filter(player => player.playerId !== action.payload.playerId)
