@@ -5,6 +5,7 @@ import { SearchResults } from './components/SearchResults/SearchResults';
 import { playerFactory } from './utility/dataFactory';
 import { addPlayerCards } from './components/SearchResults/searchResultsSlice';
 import { Cart } from './components/Cart/Cart';
+import { Filters } from './components/Filters/Filters';
 
 function App() {
   const dispatch = useDispatch();
@@ -20,6 +21,7 @@ function App() {
     <div className="App">
       <button onClick={generatePlayerData}>Get Data</button>
       <div className='playerContainer'>
+        <Filters />
         <SearchResults />
         <Cart />
       </div>
