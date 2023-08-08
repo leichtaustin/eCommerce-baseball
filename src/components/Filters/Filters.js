@@ -19,7 +19,8 @@ export const Filters = () => {
             FirstBase: document.getElementById('first').checked,
             SecondBase: document.getElementById('second').checked,
             ThirdBase: document.getElementById('third').checked,
-            Catcher: document.getElementById('catcher').checked
+            Catcher: document.getElementById('catcher').checked,
+            DesignatedHitter: document.getElementById('designated_hitter').checked,
         }
         dispatch(updateFilter(formOutput));
         Object.keys(formOutput).forEach((key) => {
@@ -60,6 +61,8 @@ export const Filters = () => {
                 <label for='third'>3B</label>
                 <input type='checkbox' id='catcher' name='catcher'/>
                 <label for='catcher'>C</label>
+                <input type='checkbox' id='designated_hitter' name='designated_hitter'/>
+                <label for='designated_hitter'>DH</label>
                 <br/>
                 <button type='submit'>Apply Filters</button>               
 

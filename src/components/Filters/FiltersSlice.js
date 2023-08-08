@@ -17,6 +17,7 @@ export const playerFiltersSlice = createSlice({
                 SB: action.payload.SB,
                 TB: action.payload.TB,
                 C: action.payload.C,
+                DH: action.payload.DH
             }
         }
 

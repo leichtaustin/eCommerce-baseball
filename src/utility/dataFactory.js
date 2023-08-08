@@ -3,7 +3,7 @@ import { v4 as uuid } from 'uuid';
 export const playerFactory = () => {
     const firstNameArray = ['Thomas', 'Bryan', 'Trea', 'Mike', 'Ryan', 'Miguel', 'Tyler', 'Adam', 'Genesis', 'Nolan', 'Lars', 'Fransisco', 'Pete', 'Pablo'];
     const lastNameArray = ['Lopez', 'Arenado', 'Edman', 'Cabrera', 'Ruiz', 'Thompson', 'Turner', 'Trout', 'Walker', 'Kirby', 'Senga', 'Lindor'];
-    const positionArray = ['StartingPitcher', 'ReliefPitcher', 'Catcher', 'FirstBase', 'SecondBase', 'ThirdBase', 'Shortstop', 'Outfield', 'DH']    
+    const positionArray = ['StartingPitcher', 'ReliefPitcher', 'Catcher', 'FirstBase', 'SecondBase', 'ThirdBase', 'Shortstop', 'Outfield', 'DesignatedHitter']    
     const hits = Math.floor(Math.random()*100) + 100;
     const id = uuid();
 
