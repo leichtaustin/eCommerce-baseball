@@ -3,7 +3,8 @@
     flex-wrap: wrap;
     max-width: 75%;
     margin: auto;
-    border: solid 1px black;
+    /* border: solid 1px hsla(360, 100%, 100%, 0.74); */
     justify-content: space-around;
     min-height: 2rem;
+    background-color: hsla(0, 0%, 100%, 0.405);
 }

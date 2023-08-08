@@ -1,7 +1,12 @@
 .App {
   text-align: center;
+  color: white;
+  background-image: url(./resources/background_blue.png);
+  background-size: cover;
 }
 
 .playerContainer {
   display: flex;
+  justify-content: space-around;
+
 }

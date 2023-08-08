@@ -1,0 +1,15 @@
+.filterContainer {
+    max-width: fit-content;
+    max-height: 325px;
+    justify-content: center;
+    padding: 1rem;
+    /* background-color: hsla(360, 100%, 100%, 0.14); */
+    border: solid hsla(360, 100%, 100%, 0.75) 2px;
+    border-radius: 15px;
+}
+
+form {
+    text-align: left;
+}
+
+

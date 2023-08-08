@@ -6,17 +6,7 @@ export const playerFactory = () => {
     const positionArray = ['StartingPitcher', 'ReliefPitcher', 'Catcher', 'FirstBase', 'SecondBase', 'ThirdBase', 'Shortstop', 'Outfield', 'DesignatedHitter']    
     const hits = Math.floor(Math.random()*100) + 100;
     const id = uuid();
-
-    // const playerIdGen = () => {
-    //     let playerId = Math.floor(Math.random() * 10000);
-    //     const existResults = useSelector(selectSearchResults);
-    //     while (existResults.includes(playerId)) {
-    //         playerId = Math.floor(Math.random() * 10000);
-    //     };
-
-    // }
-
-    
+        
     return {
         playerId: id,
         firstName: firstNameArray[Math.floor(Math.random() * firstNameArray.length)],

@@ -15,12 +15,16 @@ export const PlayerCard = (props) => {
     
     return (
         <div className='playerCardContainer'>
-            <h2>Name: {props.player.firstName} {props.player.lastName}</h2>
-            <p>Position: {props.player.position}</p>
-            <p>Auction Value: {props.player.auctionValue}</p>
-            <p>Hits: {props.player.hits}</p>
-            <p>FantasyPoints: {props.player.fantasyPoints}</p>
-            <p>ID: {props.player.playerId}</p>
+            <h3>Name: {props.player.firstName} {props.player.lastName}</h3>
+            <div className='baseDataContainer'>
+                <p>{props.player.position}</p>
+                <p id='auctionValue'>${props.player.auctionValue}</p>
+            </div>
+            <details>
+                <summary>Additional Stats</summary>
+                <p>Hits: {props.player.hits}</p>
+                <p>FantasyPoints: {props.player.fantasyPoints}</p>
+            </details>
             <button type='button' onClick={addPlayerToCart}>
                 Add To Cart
             </button>

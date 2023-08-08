@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { updateFilter } from './FiltersSlice';
 import { filterPlayersByPosition, filterPlayersInCart, resetFilteredPlayers } from '../SearchResults/searchResultsSlice';
 import { selectPlayersInCart } from '../Cart/CartSlice';
+import './filter.css';
 
 export const Filters = () => {
     const dispatch = useDispatch();
@@ -42,27 +43,36 @@ export const Filters = () => {
     }
     
     return (
-        <div>
+        <div className='filterContainer'>
+            <h2>Filters: </h2>
             <form onSubmit={handleFormSubmit}>
-                <h3>Positions: </h3>
                 <input type='checkbox' id='outfield' name='outfield'/>
                 <label for='outfield'>OF</label>
+                <br/>
                 <input type='checkbox' id='shortstop' name='shortstop'/>
                 <label for='shortstop'>SS</label>
+                <br/>
                 <input type='checkbox' id='starting_pitcher' name='starting_pitcher'/>
                 <label for='starting_pitcher'>SP</label>
+                <br/>
                 <input type='checkbox' id='relief_pitcher' name='relief_pitcher'/>
                 <label for='relief_pitcher'>RP</label>
+                <br/>
                 <input type='checkbox' id='first' name='first'/>
                 <label for='first'>1B</label>
+                <br/>
                 <input type='checkbox' id='second' name='second'/>
                 <label for='second'>2B</label>
+                <br/>
                 <input type='checkbox' id='third' name='third'/>
                 <label for='third'>3B</label>
+                <br/>
                 <input type='checkbox' id='catcher' name='catcher'/>
                 <label for='catcher'>C</label>
+                <br/>
                 <input type='checkbox' id='designated_hitter' name='designated_hitter'/>
                 <label for='designated_hitter'>DH</label>
+                <br/>
                 <br/>
                 <button type='submit'>Apply Filters</button>               
 

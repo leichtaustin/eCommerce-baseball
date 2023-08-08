@@ -6,20 +6,26 @@ import { playerFactory } from './utility/dataFactory';
 import { addPlayerCards } from './components/SearchResults/searchResultsSlice';
 import { Cart } from './components/Cart/Cart';
 import { Filters } from './components/Filters/Filters';
+import { Header } from './components/Header/Header';
 
 function App() {
   const dispatch = useDispatch();
-  const generatePlayerData = () => {
+  let isFirstLoad = true;
+
+  if(isFirstLoad) {
     let player;
     for(let i = 0; i < 20; i++) {
       player = playerFactory();
       dispatch(addPlayerCards(player));
-    }
+    };
+    isFirstLoad = false;
   }
   
   return (
     <div className="App">
-      <button onClick={generatePlayerData}>Get Data</button>
+      <header>
+        <Header />
+      </header>
       <div className='playerContainer'>
         <Filters />
         <SearchResults />
