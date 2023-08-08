@@ -1,0 +1,7 @@
+.cartContainer {
+    padding-right: .5rem;
+}
+
+#cartTotal {
+    color: hsla(103, 100%, 40%, 1);
+}

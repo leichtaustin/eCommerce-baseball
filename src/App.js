@@ -31,6 +31,7 @@ function App() {
         <SearchResults />
         <Cart />
       </div>
+
       
     </div>
   );

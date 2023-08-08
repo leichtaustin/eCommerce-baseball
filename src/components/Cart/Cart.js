@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromCart, selectCartTotal, selectPlayersInCart } from "./CartSlice";
 import { CartPlayerCard } from "./CartPlayerCard";
+import './cart.css';
 
 export const Cart = () => {
     const cartContents = useSelector(selectPlayersInCart);
@@ -9,12 +10,14 @@ export const Cart = () => {
 
     return (
         <div className="cartContainer">
-            <p>Total: {cartTotal}</p>
+            <p id="cartTotal">Cart Total: ${cartTotal}</p>
+            <button>Checkout</button>
             {cartContents.map((player) => {
                 return (
                     <CartPlayerCard player = {player} />
                 )
             })}
+           
         </div>
     )
 }

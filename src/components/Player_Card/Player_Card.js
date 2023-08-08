@@ -3,6 +3,7 @@ import './playerCard.css';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../Cart/CartSlice';
 import { filterPlayersInCart } from '../SearchResults/searchResultsSlice';
+import { imageArray } from '../../utility/images';
 
 export const PlayerCard = (props) => {
     const dispatch = useDispatch();
@@ -15,9 +16,12 @@ export const PlayerCard = (props) => {
     
     return (
         <div className='playerCardContainer'>
-            <h3>Name: {props.player.firstName} {props.player.lastName}</h3>
+            <div className='profileContainer'>
+                <h3>{props.player.firstName} {props.player.lastName}</h3>
+                <img src={props.player.photoURL} alt='player profile' />
+            </div>
             <div className='baseDataContainer'>
-                <p>{props.player.position}</p>
+                <p id='positionText'>{props.player.position}</p>
                 <p id='auctionValue'>${props.player.auctionValue}</p>
             </div>
             <details>

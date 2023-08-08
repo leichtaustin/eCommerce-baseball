@@ -1,0 +1,15 @@
+.cartPlayerCard {
+    display: block;
+    border: solid white 1px;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+#cartCardValue {
+    color: hsla(103, 100%, 40%, 1);
+}
+
+#removeFromCart {
+    margin: 1rem;
+}
