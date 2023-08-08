@@ -1,0 +1,33 @@
+.checkoutDisplayContainer {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: fit-content;
+    max-height: 75%;
+    background-color: white;
+    border: solid black 4px;
+    border-radius: 15px;
+    color: black;
+    text-align: left;
+    overflow-y: auto;
+
+}
+
+.checkoutDisplayContainer h2 {
+    text-align: center;
+}
+
+.checkoutDisplayContainer li {
+    margin-bottom: 1rem;
+}
+
+.checkoutDisplayContainer button {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    margin-top: 0px;
+}
+

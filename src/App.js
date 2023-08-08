@@ -7,6 +7,7 @@ import { addPlayerCards } from './components/SearchResults/searchResultsSlice';
 import { Cart } from './components/Cart/Cart';
 import { Filters } from './components/Filters/Filters';
 import { Header } from './components/Header/Header';
+import { CheckoutDisplay } from './components/CheckoutDisplay/CheckoutDisplay';
 
 function App() {
   const dispatch = useDispatch();
@@ -31,8 +32,7 @@ function App() {
         <SearchResults />
         <Cart />
       </div>
-
-      
+      <CheckoutDisplay />     
     </div>
   );
 }
