@@ -1,10 +1,12 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateFilter } from './FiltersSlice';
-import { filterPlayersByPosition } from '../SearchResults/searchResultsSlice';
+import { filterPlayersByPosition, filterPlayersInCart, resetFilteredPlayers } from '../SearchResults/searchResultsSlice';
+import { selectPlayersInCart } from '../Cart/CartSlice';
 
 export const Filters = () => {
     const dispatch = useDispatch();
+    const cartPlayers = useSelector(selectPlayersInCart);
     
     const handleFormSubmit = (e) => {
         let filterArray = [];
@@ -24,6 +26,13 @@ export const Filters = () => {
             filterArray.push({position: key, value: formOutput[key]})
         });
         
+        //reset the filtered players and then reapply filters
+        dispatch(resetFilteredPlayers());
+        //filter players in cart
+        cartPlayers.map(player => {
+            dispatch(filterPlayersInCart(player));
+        });
+        //reapply new filters user submitted
         filterArray.map(element => {
             if(element.value) {
                 dispatch(filterPlayersByPosition(element.position));

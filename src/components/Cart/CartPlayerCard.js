@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { removeFromCart } from './CartSlice';
-import { addPlayerCards, filterPlayersInCart } from '../SearchResults/searchResultsSlice';
+import { addPlayerFromCart } from '../SearchResults/searchResultsSlice';
 
 export const CartPlayerCard = (props) => {
     const dispatch = useDispatch();
@@ -9,7 +9,7 @@ export const CartPlayerCard = (props) => {
     const removePlayer = (e) => {
         e.preventDefault();
         dispatch(removeFromCart(props.player));
-        dispatch(addPlayerCards(props.player));
+        dispatch(addPlayerFromCart(props.player));
 
     }
 
