@@ -35,11 +35,12 @@ export const Filters = () => {
             dispatch(filterPlayersInCart(player));
         });
         //reapply new filters user submitted
+        if(filterArray.some(e => e.value === true)){
         filterArray.map(element => {
-            if(element.value) {
+            if(!(element.value)) {
                 dispatch(filterPlayersByPosition(element.position));
             }
-        })
+        })};
     }
     
     return (
@@ -74,7 +75,7 @@ export const Filters = () => {
                 <label for='designated_hitter'>DH</label>
                 <br/>
                 <br/>
-                <button type='submit'>Apply Filters</button>               
+                <button type='submit'>Apply Filters</button>              
 
             </form>
         </div>
